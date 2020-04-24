@@ -1,0 +1,501 @@
+charset "UTF-8";
+/*共通部分*/
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+    font-weight: 500;
+    color: #333;
+    line-height: 2.0;
+    letter-spacing: 0.1em;
+}
+
+*, *:before, *:after {
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box
+}
+
+h2,h3,h4,h5 {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul,li,dl,dt,dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: all .6s ease;
+}
+
+a:hover {
+    transition: all .6s ease;
+}
+
+.content-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+section h2 {
+    font-size: 2rem;
+}
+
+/*ヘッダー*/
+.header {
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 1;
+}
+.header h1 {
+    margin: 0 0 0 25px;
+    padding: 0 10px;
+    font-size: 2.5rem;
+    color: goldenrod;
+    background-color: #191970;
+}
+.header nav ul {
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-right: 30px;
+}
+.header nav ul li {
+    display: inline-block;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 15px;  
+    font-weight: bold;
+}
+.header nav ul li+li {
+    border-left: 1px solid #333;
+}
+header nav li a {
+    color: #191970;
+}
+header nav li a:hover {
+    opacity: 0.4;
+}
+.header nav li.phone {
+    margin: 0 30px 0 10px;
+    padding: 0 25px;
+    border: 1px solid #191970;
+    line-height: 50px;
+    display: block;
+    color: #191970;
+}
+
+@media screen and (max-width: 1199px) {
+    .header h1 {
+        font-size: 0.8rem;
+
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 26px;
+        cursor: pointer;
+    }
+    header nav {
+        display: none;
+    }
+    .nav-button,
+    .nav-button span {
+        display: inline-block;
+    }
+    .nav-button {
+        position: relative;
+        width: 30px;
+        height: 26px;
+    }
+    .nav-button span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #191970;
+    }
+    .nav-button span:nth-of-type(1) {
+        top: 0;
+    }
+    .nav-button span:nth-of-type(2) {
+        top: 11px;
+    }
+    .nav-button span:nth-of-type(3) {
+        bottom: 0;
+    }
+}
+
+/*メイン*/
+.mainvisual {
+    position: relative;
+}
+.mainvisual img {
+    height: 700px;
+    object-fit: cover;
+    object-position: 0 15%;
+}
+
+@media screen and (max-width: 767px) {
+    .mainvisual img {
+        height: auto;
+    }
+}
+
+/*メニュー*/
+#menu {
+    padding: 10% 0;
+    position: relative;
+}
+#menu ul {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    transform: skewY(2deg);
+}
+#menu ul li {
+    width: 48%;
+    position: relative;
+}
+#menu ul li figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 66%;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1;
+    transition: all .6s ease;
+}
+#menu ul li a:hover figure::after {
+    background: rgba(50, 50, 50, 0.2);
+    transition: all .6s ease;
+}
+#menu li span {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)skewY(-2deg);
+    z-index: 2;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    #menu ul {
+        transform: none;
+    }
+    #menu li span {
+        transform: translate(-50%,-50%);
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 479px) {
+    #menu ul li {
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+}
+/*セラピスト紹介*/
+#greeting h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#greeting h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.8rem;
+
+}
+#greeting h3,h4 {
+    text-align: center;  
+
+}
+#greeting p {
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1.0rem;
+
+}
+#greeting .contents {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+#greeting .contents figure {
+    width: 30%;
+}
+#greeting .contents img {
+    border-radius: 50%;
+}
+#greeting .content {
+    width: 48%;
+}
+@media screen and (max-width: 767px) {
+    /*flex-direction: column;を使用するとコンテンツが縦並びになる(1カラム)
+      cssでdisplay: flexbox;にしておくこと*/
+    .greeting .contents {
+        flex-direction: column;
+    }
+    .greeting .contents figure {
+        width: 60%;
+    }
+    .greeting .content {
+        width: 50%;
+    }
+    .greeting .content h3,h4 {
+        text-align: center;
+    }
+}
+
+/*お問い合わせ内容*/
+#contact {
+    background-image: url(../img/top2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+}
+#contact .page-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+#contact .wrapper {
+    margin-left: 50px;
+}
+form div {
+    margin-bottom: 14px;
+}
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    background: rgba(255,255,255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 240px;
+}
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    line-height: 2;
+    background-color: #993300;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+#contact .background-img {
+}
+}
+
+/*店舗情報*/
+#location {
+    padding: 10% 0;
+}
+#location .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.location-info {
+    width: 22%;
+}
+.location-info h1 {
+    font-size: 40px;
+    margin-left: 10px;
+    padding-right: 40px;
+}
+.location-info p {
+    padding: 12px 10px;
+    margin-left: 20px;
+}
+.location-map {
+    width: 50%;
+    margin-right: 100px;
+}
+iframe {
+    width: 100%;
+}
+
+.sns-list ul {
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .sns .contact-list li a {
+    color:#333;
+  }
+  #twitter, #facebook {
+      margin: 0 10px 15px 10px;
+  }
+  
+  
+
+@media screen and (max-width: 767px) {
+#location .wrapper {
+    flex-direction: column;
+}
+.location-info h1 {
+    background-color: pink;
+    text-align: center;
+    margin-right: 30px;
+
+}
+.location-info p {
+    text-align: center;
+    margin: 0 auto;
+}
+.location-map {
+    width: 50%;
+    margin: 0 auto;
+}
+
+}
+
+/*フッター*/
+.footer .low {
+    width: 100%;
+    height: 40px;
+    background-color: #993300;
+    color: white;
+    font-size: 14px;
+}
+.footer .low p {
+    color: white;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+#page_top{
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    opacity: 0.6;
+  }
+  #page_top a {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    text-decoration: none;
+  }
+  #page_top a::after{
+    content: 'TOP';
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    color: white;
+    background-color: #008080;
+    border-radius: 30px;
+  }
+
+@media screen and (max-width: 1199px) {
+    .footer .high {
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer section {
+        padding-top: 50px;
+    }
+    .footer .high li {
+        width: calc(100%/3);
+        margin: 0 0 10px;
+    }
+    .footer .high li a {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+    .footer .low {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 479px) {
+    .footer .high h1, .low {
+        text-align: center;
+    }
+    .footer .high li {
+      padding: 10px;
+      text-align: center;
+    }
+}
